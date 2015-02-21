@@ -12,6 +12,8 @@ The book inventory app relies on the
 
 Precondition: Install rest-devtools into your local repository.
 
+See more details: <a href="http://www.talangsoft.org/2015/02/21/module_architecture/"/>Blog post<a>
+
 
 ### Create a book
 POST http://localhost:8080/api/books
