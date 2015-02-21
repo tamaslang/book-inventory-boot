@@ -21,7 +21,6 @@ import java.io.IOException;
 @EnableAutoConfiguration
 @Import(RestDevtoolsConfig.class)
 @EnableJpaRepositories
-@EnableAspectJAutoProxy
 public class Application implements Loggable {
     @Resource
     private Environment env;
