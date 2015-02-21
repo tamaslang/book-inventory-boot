@@ -1,4 +1,4 @@
-# Repository Book inventory Spring boot app #
+# Book inventory Spring boot app #
 
 Spring Boot based implementation of a minimalist book inventory app to represent a possible module architecture.
 This app offers basic CRUD functionality and some search functionality for handling books via book title and author.
