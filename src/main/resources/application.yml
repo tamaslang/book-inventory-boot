@@ -1,0 +1,31 @@
+gateway:
+  configuration:
+    readTimeout: 20000
+    connectTimeout: 20000
+
+
+spring:
+    datasource:
+            dataSourceClassName: org.hsqldb.jdbc.JDBCDataSource
+            url: jdbc:hsqldb:mem:scratchdb
+            databaseName:
+            serverName:
+            username: SA
+            password:
+
+    jpa:
+            database-platform: org.hibernate.dialect.HSQLDialect
+            database: HSQL
+            show_sql: true
+            hibernate:
+                ddl-auto: none
+                naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+            properties:
+                 hibernate.cache.use_second_level_cache: false
+                 hibernate.cache.use_query_cache: false
+                 hibernate.generate_statistics: false
+                 hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+                 org.hibernate.envers.do_not_audit_optimistic_locking_field: false
+                 org.hibernate.envers.audit_table_suffix: _aud
+                 org.hibernate.envers.revision_field_name: rev
+                 org.hibernate.envers.revision_type_field_name: revtype

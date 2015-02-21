@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="false" debug="true">
+    <jmxConfigurator />
+    <property name="LOG_LEVEL" value="debug"/>
+    <property name="USE_LOGSTASH" value="no"/>
+    <property name="LOGSTASH_HOST" value="10.0.40.20"/>
+    <property name="LOGSTASH_PORT" value="5000"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>utf-8</charset>
+            <Pattern>%date{ISO8601} [%-5level] %logger{10} %msg%n</Pattern>
+        </encoder>
+    </appender>
+    <if condition='property("USE_LOGSTASH").contains("yes")'>
+        <then>
+            <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+                <remoteHost>${LOGSTASH_HOST}</remoteHost>
+                <port>${LOGSTASH_PORT}</port>
+                <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                    <customFields>{"appname":"${rootArtifactId}"}</customFields>
+                </encoder>
+            </appender>
+            <root level="${LOG_LEVEL}">
+                <appender-ref ref="LOGSTASH"/>
+            </root>
+        </then>
+    </if>
+    <logger name="org.talang.rest.devtools" level="DEBUG"/>
+    <logger name="com.jayway" level="WARN"/>
+    <logger name="ch.qos.logback" level="WARN"/>
+    <logger name="com.codahale.metrics" level="WARN"/>
+    <logger name="com.ryantenney" level="WARN"/>
+    <logger name="net.sf.ehcache" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.springframework.web" level="DEBUG"/>
+    <logger name="org.springframework.security" level="INFO"/>
+    <logger name="org.springframework.cache" level="INFO"/>
+    <logger name="com.fasterxml.jackson.databind" level="INFO"/>
+    <logger name="org.hibernate" level="INFO"/>
+
+
+    <root level="${LOG_LEVEL}">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
