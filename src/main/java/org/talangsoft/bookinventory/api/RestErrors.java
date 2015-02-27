@@ -1,4 +1,4 @@
-package org.talang.bookinventory.api;
+package org.talangsoft.bookinventory.api;
 
 import org.springframework.http.HttpStatus;
 import org.talangsoft.rest.devtools.web.RestError;

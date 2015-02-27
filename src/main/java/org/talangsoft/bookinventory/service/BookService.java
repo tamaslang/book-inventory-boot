@@ -1,7 +1,7 @@
-package org.talang.bookinventory.service;
+package org.talangsoft.bookinventory.service;
 
 import org.springframework.transaction.annotation.Transactional;
-import org.talang.bookinventory.api.BookDTO;
+import org.talangsoft.bookinventory.api.BookDTO;
 
 import java.util.List;
 

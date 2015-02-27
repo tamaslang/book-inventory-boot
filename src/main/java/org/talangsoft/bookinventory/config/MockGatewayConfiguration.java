@@ -1,4 +1,4 @@
-package org.talang.bookinventory.config;
+package org.talangsoft.bookinventory.config;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.mock.http.client.MockClientHttpRequest;
 import org.springframework.mock.http.client.MockClientHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.test.web.client.MockRestServiceServer;
-import org.talang.bookinventory.gateway.IsbnGateway;
+import org.talangsoft.bookinventory.gateway.IsbnGateway;
 
 import java.io.IOException;
 import java.net.URI;

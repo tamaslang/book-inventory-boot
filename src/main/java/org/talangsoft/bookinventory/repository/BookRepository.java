@@ -1,7 +1,7 @@
-package org.talang.bookinventory.repository;
+package org.talangsoft.bookinventory.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.talang.bookinventory.domain.Book;
+import org.talangsoft.bookinventory.domain.Book;
 
 import java.util.List;
 

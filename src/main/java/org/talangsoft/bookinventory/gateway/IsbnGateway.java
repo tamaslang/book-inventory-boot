@@ -1,9 +1,8 @@
-package org.talang.bookinventory.gateway;
+package org.talangsoft.bookinventory.gateway;
 
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 
-import org.talang.bookinventory.api.BookDTO;
+import org.talangsoft.bookinventory.api.BookDTO;
 import org.talangsoft.rest.devtools.gateway.GatewayCommon;
 
 @Service

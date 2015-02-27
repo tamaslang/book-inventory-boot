@@ -1,4 +1,4 @@
-package org.talang.bookinventory.integration;
+package org.talangsoft.bookinventory.integration;
 
 
 import cucumber.api.DataTable;
@@ -12,10 +12,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.client.MockRestServiceServer;
-import org.talang.bookinventory.Application;
-import org.talang.bookinventory.domain.Book;
-import org.talang.bookinventory.gateway.IsbnGateway;
-import org.talang.bookinventory.repository.BookRepository;
+import org.talangsoft.bookinventory.Application;
+import org.talangsoft.bookinventory.domain.Book;
+import org.talangsoft.bookinventory.gateway.IsbnGateway;
+import org.talangsoft.bookinventory.repository.BookRepository;
 
 import java.util.List;
 

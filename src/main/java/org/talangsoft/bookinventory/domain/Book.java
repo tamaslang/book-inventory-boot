@@ -1,4 +1,4 @@
-package org.talang.bookinventory.domain;
+package org.talangsoft.bookinventory.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

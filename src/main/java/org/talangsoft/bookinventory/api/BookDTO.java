@@ -1,4 +1,4 @@
-package org.talang.bookinventory.api;
+package org.talangsoft.bookinventory.api;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

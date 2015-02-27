@@ -1,4 +1,4 @@
-package org.talang.bookinventory.config;
+package org.talangsoft.bookinventory.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

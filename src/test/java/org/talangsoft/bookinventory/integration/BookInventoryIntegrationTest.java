@@ -1,4 +1,4 @@
-package org.talang.bookinventory.integration;
+package org.talangsoft.bookinventory.integration;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;

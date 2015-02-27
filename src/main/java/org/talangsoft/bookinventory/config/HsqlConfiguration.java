@@ -1,4 +1,4 @@
-package org.talang.bookinventory.config;
+package org.talangsoft.bookinventory.config;
 
 import org.hsqldb.Server;
 import org.slf4j.Logger;

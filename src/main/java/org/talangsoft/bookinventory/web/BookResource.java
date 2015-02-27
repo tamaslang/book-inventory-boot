@@ -1,12 +1,12 @@
-package org.talang.bookinventory.web;
+package org.talangsoft.bookinventory.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.talang.bookinventory.api.BookDTO;
-import org.talang.bookinventory.service.BookService;
+import org.talangsoft.bookinventory.api.BookDTO;
+import org.talangsoft.bookinventory.service.BookService;
 import org.talangsoft.rest.devtools.logging.Loggable;
 import javax.validation.Valid;
 import java.net.URI;

@@ -1,13 +1,13 @@
-package org.talang.bookinventory.service;
+package org.talangsoft.bookinventory.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.talang.bookinventory.api.BookDTO;
-import org.talang.bookinventory.api.RestErrors;
-import org.talang.bookinventory.domain.Book;
-import org.talang.bookinventory.gateway.IsbnGateway;
-import org.talang.bookinventory.repository.BookRepository;
+import org.talangsoft.bookinventory.api.BookDTO;
+import org.talangsoft.bookinventory.api.RestErrors;
+import org.talangsoft.bookinventory.domain.Book;
+import org.talangsoft.bookinventory.gateway.IsbnGateway;
+import org.talangsoft.bookinventory.repository.BookRepository;
 import org.talangsoft.rest.devtools.logging.Loggable;
 import org.talangsoft.rest.devtools.web.RestException;
 import org.talangsoft.rest.devtools.web.util.PNV;

@@ -1,4 +1,4 @@
-package org.talang.bookinventory.integration;
+package org.talangsoft.bookinventory.integration;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import org.talang.bookinventory.Application;
+import org.talangsoft.bookinventory.Application;
 
 import java.util.List;
 import java.util.Map;
