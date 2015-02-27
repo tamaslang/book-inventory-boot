@@ -1,8 +1,8 @@
 package org.talang.bookinventory.api;
 
 import org.springframework.http.HttpStatus;
-import org.talang.rest.devtools.web.RestError;
-import org.talang.rest.devtools.web.TranslatableToRestError;
+import org.talangsoft.rest.devtools.web.RestError;
+import org.talangsoft.rest.devtools.web.TranslatableToRestError;
 
 public enum RestErrors implements TranslatableToRestError {
     BOOK_NOT_FOUND("The book was not found.", HttpStatus.NOT_FOUND);

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.talang.rest.devtools.logging.Loggable;
+import org.talangsoft.rest.devtools.logging.Loggable;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;

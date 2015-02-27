@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContextException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.talang.rest.devtools.logging.Loggable;
+import org.talangsoft.rest.devtools.logging.Loggable;
 
 @Configuration
 public class HsqlConfiguration implements Loggable {

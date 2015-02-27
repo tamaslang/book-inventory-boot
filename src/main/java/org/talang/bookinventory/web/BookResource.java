@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.talang.bookinventory.api.BookDTO;
 import org.talang.bookinventory.service.BookService;
-import org.talang.rest.devtools.logging.Loggable;
+import org.talangsoft.rest.devtools.logging.Loggable;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URLDecoder;

@@ -4,7 +4,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 
 import org.talang.bookinventory.api.BookDTO;
-import org.talang.rest.devtools.gateway.GatewayCommon;
+import org.talangsoft.rest.devtools.gateway.GatewayCommon;
 
 @Service
 public class IsbnGateway extends GatewayCommon {

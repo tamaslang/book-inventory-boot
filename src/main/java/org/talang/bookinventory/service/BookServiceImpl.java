@@ -8,10 +8,10 @@ import org.talang.bookinventory.api.RestErrors;
 import org.talang.bookinventory.domain.Book;
 import org.talang.bookinventory.gateway.IsbnGateway;
 import org.talang.bookinventory.repository.BookRepository;
-import org.talang.rest.devtools.logging.Loggable;
-import org.talang.rest.devtools.web.RestException;
-import org.talang.rest.devtools.web.util.PNV;
-import org.talang.rest.devtools.web.util.RestUtils;
+import org.talangsoft.rest.devtools.logging.Loggable;
+import org.talangsoft.rest.devtools.web.RestException;
+import org.talangsoft.rest.devtools.web.util.PNV;
+import org.talangsoft.rest.devtools.web.util.RestUtils;
 
 import java.util.List;
 import java.util.function.BiFunction;

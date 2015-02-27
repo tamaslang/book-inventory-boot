@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.talang.bookinventory.config.RestDevtoolsConfig;
-import org.talang.rest.devtools.logging.Loggable;
+import org.talangsoft.rest.devtools.logging.Loggable;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;

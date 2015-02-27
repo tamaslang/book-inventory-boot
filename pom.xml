@@ -35,9 +35,9 @@
 
         <!--Rest tools dependency -->
         <dependency>
-            <groupId>org.talang.rest</groupId>
+            <groupId>org.talangsoft</groupId>
             <artifactId>rest-devtools</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
 
         <!--Utils dependencies -->

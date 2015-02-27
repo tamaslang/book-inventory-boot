@@ -2,7 +2,7 @@ package org.talang.bookinventory.api;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.talang.rest.devtools.domain.DTO;
+import org.talangsoft.rest.devtools.domain.DTO;
 
 public class BookDTO extends DTO{
     private String isbn;
