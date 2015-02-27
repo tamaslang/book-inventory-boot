@@ -7,10 +7,8 @@ On the creation of a new Book it is registered via an imaginary 3rd party "regis
 
 ![Book Inventory app architecture](/docs/book_inventory_app.png "Inventory app architecture")
 
-The book inventory app relies on the
-<a href="http://www.talangsoft.org/2015/02/16/rest-devtools-introduction/" target="_blank">Rest Devtools</a> library.
-
-Precondition: Install rest-devtools into your local repository.
+The book inventory app relies on my
+<a href="http://www.talangsoft.org/2015/02/16/rest-devtools-introduction/" target="_blank">Rest Devtools</a> library released now in Sonatype repo / Maven Central .
 
 See more details: <a href="http://www.talangsoft.org/2015/02/21/module_architecture/" target="_blank">Blog post<a>
 
