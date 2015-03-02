@@ -30,15 +30,15 @@ Feature: Example Resource Integration Test
     Given the web context is set
     Given the db is empty
     Given the following books exist:
-    | isbn  |    title              |    author            |
-    | n123  | Hamlet                |  William Shakespeare |
-    | n124  | Romeo and Juliet      |  William Shakespeare |
-    | n125  | To Kill a Mockingbird |  Harper lee          |
-    When client request GET /api/books/n125
+    | isbn     |    title              |    author            |
+    | isbn1234 | Hamlet                |  William Shakespeare |
+    | isbn1235 | Romeo and Juliet      |  William Shakespeare |
+    | isbn1236 | To Kill a Mockingbird |  Harper lee          |
+    When client request GET /api/books/isbn1236
     Then the response code should be 200
     Then the result json should be:
     """
-    {"isbn":"n125","title":"To Kill a Mockingbird","author":"Harper lee"}
+    {"isbn":"isbn1236","title":"To Kill a Mockingbird","author":"Harper lee"}
     """
 
   Scenario: find by isbn -> no result
@@ -55,46 +55,46 @@ Feature: Example Resource Integration Test
     Given the web context is set
     Given the db is empty
     Given the following books exist:
-      | isbn  |    title              |    author            |
-      | n123  | Hamlet                |  William Shakespeare |
-      | n124  | Romeo and Juliet      |  William Shakespeare |
-      | n125  | To Kill a Mockingbird |  Harper Lee          |
+    | isbn     |    title              |    author            |
+    | isbn1234 | Hamlet                |  William Shakespeare |
+    | isbn1235 | Romeo and Juliet      |  William Shakespeare |
+    | isbn1236 | To Kill a Mockingbird |  Harper lee          |
     When client request GET /api/books?author=William%20Shakespeare
     Then the response code should be 200
     Then the result json should be:
     """
-    [{"isbn":"n123","title":"Hamlet","author":"William Shakespeare"},
-     {"isbn":"n124","title":"Romeo and Juliet","author":"William Shakespeare"}]
+    [{"isbn":"isbn1234","title":"Hamlet","author":"William Shakespeare"},
+     {"isbn":"isbn1235","title":"Romeo and Juliet","author":"William Shakespeare"}]
     """
 
   Scenario: find by title
     Given the web context is set
     Given the db is empty
     Given the following books exist:
-      | isbn  |    title              |    author            |
-      | n123  | Hamlet                |  William Shakespeare |
-      | n124  | Romeo and Juliet      |  William Shakespeare |
-      | n125  | To Kill a Mockingbird |  Harper lee          |
+    | isbn     |    title              |    author            |
+    | isbn1234 | Hamlet                |  William Shakespeare |
+    | isbn1235 | Romeo and Juliet      |  William Shakespeare |
+    | isbn1236 | To Kill a Mockingbird |  Harper lee          |
     When client request GET /api/books?title=Romeo%20and%20Juliet
     Then the response code should be 200
     Then the result json should be:
     """
-    [{"isbn":"n124","title":"Romeo and Juliet","author":"William Shakespeare"}]
+    [{"isbn":"isbn1235","title":"Romeo and Juliet","author":"William Shakespeare"}]
     """
 
   Scenario: find all
     Given the web context is set
     Given the db is empty
     Given the following books exist:
-      | isbn  |    title              |    author            |
-      | n123  | Hamlet                |  William Shakespeare |
-      | n124  | Romeo and Juliet      |  William Shakespeare |
-      | n125  | To Kill a Mockingbird |  Harper lee          |
+    | isbn     |    title              |    author            |
+    | isbn1234 | Hamlet                |  William Shakespeare |
+    | isbn1235 | Romeo and Juliet      |  William Shakespeare |
+    | isbn1236 | To Kill a Mockingbird |  Harper lee          |
     When client request GET /api/books
     Then the response code should be 200
     Then the result json should be:
     """
-    [{"isbn":"n123", "title":"Hamlet","author":"William Shakespeare"},
-     {"isbn":"n124", "title":"Romeo and Juliet","author":"William Shakespeare"},
-     {"isbn":"n125", "title":"To Kill a Mockingbird","author":"Harper lee"}]
+    [{"isbn":"isbn1234", "title":"Hamlet","author":"William Shakespeare"},
+     {"isbn":"isbn1235", "title":"Romeo and Juliet","author":"William Shakespeare"},
+     {"isbn":"isbn1236", "title":"To Kill a Mockingbird","author":"Harper lee"}]
     """
