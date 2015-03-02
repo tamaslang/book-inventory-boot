@@ -50,6 +50,6 @@ response:
 [{ "author":"William Shakespeare","title":"Hamlet","isbn":null }]
 
 ### Delete
-DELETE http://localhost:8080/api/books?title=Hamlet
+DELETE http://localhost:8080/api/books/isbn1001
 response:
 200 OK
