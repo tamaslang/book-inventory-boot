@@ -10,7 +10,7 @@
 
     <groupId>org.talang</groupId>
     <artifactId>book-inventory-boot</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -28,6 +28,10 @@
         <cucumber-pro.version>1.0.6</cucumber-pro.version>
         <xml-apis.version>1.4.01</xml-apis.version>
         <maven-release-plugin.version>2.2.2</maven-release-plugin.version>
+
+        <rest-devtools.version>1.0.1</rest-devtools.version>
+        <spring-boot-maven-plugin.version>1.2.2.RELEASE</spring-boot-maven-plugin.version>
+        <HikariCP.version>1.2.8</HikariCP.version>
     </properties>
 
 
@@ -37,7 +41,7 @@
         <dependency>
             <groupId>org.talangsoft</groupId>
             <artifactId>rest-devtools</artifactId>
-            <version>1.0.0</version>
+            <version>${rest-devtools.version}</version>
         </dependency>
 
         <!--Utils dependencies -->
@@ -50,7 +54,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
         </dependency>
 
         <!-- test application -->
@@ -93,7 +96,7 @@
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
-            <version>1.2.8</version>
+            <version>${HikariCP.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.sun</groupId>
@@ -153,7 +156,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.2.1.RELEASE</version>
+                <version>${spring-boot-maven-plugin.version}</version>
             </plugin>
         </plugins>
     </build>
