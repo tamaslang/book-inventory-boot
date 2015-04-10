@@ -1,0 +1,7 @@
+{
+  "name": "Book Invetory REST API",
+  "version": "1.0.0",
+  "description": "Rest API for book-inventory-boot app",
+  "title": "Book Inventory Rest API",
+  "url" : "http://www.talangsoft.org/book-inventory-boot"
+}

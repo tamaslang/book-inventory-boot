@@ -1,102 +1,195 @@
 package org.talangsoft.bookinventory.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.talangsoft.bookinventory.api.BookDTO;
-import org.talangsoft.bookinventory.service.BookService;
-import org.talangsoft.rest.devtools.logging.Loggable;
+
 import javax.validation.Valid;
-import java.net.URI;
-import java.net.URLDecoder;
 import java.util.List;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+public interface BookResource {
 
-@RestController
-@RequestMapping("/api/books")
-public class BookResource implements Loggable{
+    /**
+     * @api {get} /api/books/{isbn} Get book by isbn code
+     * @apiName getByIsbn
+     * @apiGroup BookResource
+     * @apiDescription Get a book by isbn
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} isbn The isbn that identifies the book
+     *
+     * @apiSuccess {BookDTO} book The book for the isbn
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *         {
+     *           "isbn":"isbn1236",
+     *           "title":"To Kill a Mockingbird",
+     *           "author":"Harper lee"
+     *         }
+     *
+     * @apiError (404) BookNotFound The book was not found
+     * @apiErrorExample Error-Response:
+     *     HTTP/1.1 404 Not found
+     *     {"errorCode":"BOOK_NOT_FOUND",
+     *      "errorMessage":"The book was not found.",
+     *      "params":{
+     *       "isbn":"not-existing-isbn"
+     *      }
+     *     }
+     *
+     */
+    BookDTO getByIsbn(String isbn);
 
-    public static final String ENCODING_UTF_8 = "UTF-8";
-    @Autowired
-    BookService bookService;
-
-    @RequestMapping(value = "/{isbn}",
-            method = RequestMethod.GET,
-            produces = APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
-    public BookDTO getByIsbn(@PathVariable String isbn) {
-        logger().info("Find book by isbn '{}'",isbn);
-        return bookService.findByIsbn(isbn);
-    }
-
-    @RequestMapping(
-            params = {"author"},
-            method = RequestMethod.GET,
-            produces = APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
-    public List<BookDTO> getByAuthor(@RequestParam(value = "author",required = true) String author) throws Exception{
-        String decodedSearchString = URLDecoder.decode(author, ENCODING_UTF_8);
-        logger().info("Get book by author '{}'",decodedSearchString);
-        return bookService.findByAuthor(decodedSearchString);
-    }
-
-
-    @RequestMapping(
-            params = {"title"},
-            method = RequestMethod.GET,
-            produces = APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
-    public List<BookDTO> getByTitle(@RequestParam(value = "title",required = true) String title) throws Exception{
-        String decodedSearchString = URLDecoder.decode(title, ENCODING_UTF_8);
-        logger().info("Get book by title like '{}'",decodedSearchString);
-        return bookService.findByTitleLike(decodedSearchString);
-    }
-
-
-    @RequestMapping(
-            method = RequestMethod.GET,
-            produces = APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
-    public List<BookDTO> getAll() {
-        logger().info("Get all books");
-        return bookService.findAll();
-    }
-
-
-    @RequestMapping(
-            method = RequestMethod.POST,
-            produces = APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Void> createBook(@RequestBody @Valid BookDTO book) {
-        logger().info("Create book {}",book);
-
-        String isbn = bookService.createNew(book);
-
-        HttpHeaders headers = new HttpHeaders();
-        URI location = linkTo(methodOn(this.getClass()).getByIsbn(isbn)).toUri();
-        logger().debug("Set header location to: {} ", location);
-        headers.setLocation(location);
-
-        return new ResponseEntity<>(headers, HttpStatus.CREATED);
-    }
-
-    @RequestMapping(value = "/{isbn}",
-            method = RequestMethod.PUT,
-            produces = APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-    public void updateBook(@PathVariable String isbn, @RequestBody @Valid BookDTO book) {
-        logger().info("Update book with isbn '{}' to {}",isbn, book);
-        bookService.update(isbn,book);
-    }
+    /**
+     * @api {get} /api/books/?author={author} Find books by author
+     * @apiName getByAuthor
+     * @apiGroup BookResource
+     * @apiDescription Retrieve books by author
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} author The author of the book
+     *
+     * @apiSuccess {List} books The books of the given author
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *     [
+     *         {
+     *           "isbn":"isbn1236",
+     *           "title":"To Kill a Mockingbird",
+     *           "author":"Harper lee"
+     *         },
+     *         {
+     *           "isbn":"isbn1237",
+     *           "title":"Resurrect a Mockingbird",
+     *           "author":"Harper lee"
+     *         }
+     *     ]
+     *
+     * @apiError (400) UrlEncodingNotSupported The url encoding was not supported
+     * @apiErrorExample Error-Response:
+     *     HTTP/1.1 400 Not found
+     *     {"errorCode":"URL_ENCODING_NOT_SUPPORTED",
+     *      "errorMessage":"Url encoding not supported.",
+     *      "params":{
+     *       "text":"..."
+     *      }
+     *     }
+     *
+     */
+    List<BookDTO> getByAuthor(@RequestParam(value = "author",required = true) String author);
 
 
+    /**
+     * @api {get} /api/books/?title={title} Find books by title
+     * @apiName getByTitle
+     * @apiGroup BookResource
+     * @apiDescription Retrieve books by title
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} title The title of the book
+     *
+     * @apiSuccess {List} books The books with the given title
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *     [
+     *         {
+     *           "isbn":"isbn1236",
+     *           "title":"To Kill a Mockingbird",
+     *           "author":"Harper lee"
+     *         }
+     *     ]
+     *
+     * @apiError (400) UrlEncodingNotSupported The url encoding was not supported
+     * @apiErrorExample Error-Response:
+     *     HTTP/1.1 400 Not found
+     *     {"errorCode":"URL_ENCODING_NOT_SUPPORTED",
+     *      "errorMessage":"Url encoding not supported.",
+     *      "params":{
+     *       "text":"..."
+     *      }
+     *     }
+     *
+     */
+    List<BookDTO> getByTitle(@RequestParam(value = "title",required = true) String title);
+
+
+    /**
+     * @api {get} /api/books Find all books
+     * @apiName getAll
+     * @apiGroup BookResource
+     * @apiDescription Find all books
+     * @apiVersion 1.0.0
+     *
+     * @apiSuccess {List} books The books in the database
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *     [
+     *         {
+     *           "isbn":"isbn1235",
+     *           "title":"Romeo and Juliet",
+     *           "author":"William Shakespeare"
+     *         },
+     *         {
+     *           "isbn":"isbn1236",
+     *           "title":"Kill a Mockingbird",
+     *           "author":"Harper lee"
+     *         }
+     *     ]
+     *
+     */
+    List<BookDTO> getAll();
+
+
+    /**
+     * @api {post} /api/books Add a new book
+     * @apiName createBook
+     * @apiGroup BookResource
+     * @apiDescription Add a new book
+     * @apiVersion 1.0.0
+     *
+     * @apiSuccess (201) {String} location The location of the book; sent in header
+     *
+     * @apiParamExample {json} Request-Example:
+     *         {
+     *           "isbn":null,
+     *           "title":"Romeo and Juliet",
+     *           "author":"William Shakespeare"
+     *         }
+     *
+     */
+    ResponseEntity<Void> createBook(@RequestBody @Valid BookDTO book);
+
+    /**
+     * @api {put} /api/books/isbn Update  book
+     * @apiName updateBook
+     * @apiGroup BookResource
+     * @apiDescription Update the book with the given isbn
+     * @apiVersion 1.0.0
+     *
+     * @apiParamExample {json} Request-Example:
+     *         {
+     *           "isbn":null,
+     *           "title":"Romeo and Juliet",
+     *           "author":"William Shakespeare"
+     *         }
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *
+     * @apiError (404) BookNotFound The book was not found
+     * @apiErrorExample Error-Response:
+     *     HTTP/1.1 404 Not found
+     *     {"errorCode":"BOOK_NOT_FOUND",
+     *      "errorMessage":"The book was not found.",
+     *      "params":{
+     *       "isbn":"not-existing-isbn"
+     *      }
+     *     }
+     */
+    void updateBook(String isbn, BookDTO book);
 }
