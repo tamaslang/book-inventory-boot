@@ -75,7 +75,6 @@ public class BookResourceImpl implements BookResource, Loggable{
     @RequestMapping(
             method = RequestMethod.POST,
             produces = APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Void> createBook(@RequestBody @Valid BookDTO book) {
         logger().info("Create book {}",book);
 

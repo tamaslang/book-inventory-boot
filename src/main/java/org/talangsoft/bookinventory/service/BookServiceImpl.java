@@ -27,13 +27,9 @@ public class BookServiceImpl implements Loggable, BookService {
     @Autowired
     BookRepository bookRepo;
 
-    private Function<Book,BookDTO> bookToBookDTO = new Function<Book, BookDTO>() {
-        public BookDTO apply(Book book) { return new BookDTO(book.getIsbn(), book.getTitle(),book.getAuthor());}
-    };
+    private Function<Book,BookDTO> bookToBookDTO = book-> new BookDTO(book.getIsbn(), book.getTitle(),book.getAuthor());
 
-    private BiFunction<String, BookDTO, Book> bookDTOToBook = new BiFunction<String, BookDTO, Book>() {
-        public Book apply(String isbn, BookDTO bookDTO) { return new Book(isbn,bookDTO.getTitle(),bookDTO.getAuthor());}
-    };
+    private BiFunction<String, BookDTO, Book> bookDTOToBook = (isbn,bookDTO) -> new Book(isbn,bookDTO.getTitle(),bookDTO.getAuthor());
 
     @Override
     @Transactional
