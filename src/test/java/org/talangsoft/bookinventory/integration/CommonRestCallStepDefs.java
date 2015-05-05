@@ -108,16 +108,12 @@ public class CommonRestCallStepDefs {
 
     @Then("^the result json should be:$")
     public void checkResponseJsonMatch(String jsonString) throws Exception {
-        String jsonContent = resultActions.andReturn().getResponse().getContentAsString();
-        JSONAssert.assertEquals(jsonString, jsonContent, false);
-        // TODO: after spring 4.1: resultActions.andExpect(content().json(jsonString));
+        resultActions.andExpect(content().json(jsonString));
     }
 
     @Then("^the result json should be empty")
     public void checkResponseJsonIsEmpty() throws Exception {
-        String jsonContent = resultActions.andReturn().getResponse().getContentAsString();
-        JSONAssert.assertEquals("[]", jsonContent, false);
-        // TODO: after spring 4.1: resultActions.andExpect(content().json(jsonString));
+        resultActions.andExpect(content().json("[]"));
     }
 
     /**

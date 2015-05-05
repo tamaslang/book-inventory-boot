@@ -10,11 +10,11 @@
 
     <groupId>org.talang</groupId>
     <artifactId>book-inventory-boot</artifactId>
-    <version>0.5-SNAPSHOT</version>
+    <version>0.6-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
-        <rest-devtools.version>1.0.2</rest-devtools.version>
+        <rest-devtools.version>1.0.3</rest-devtools.version>
         <spring-boot-maven-plugin.version>1.2.3.RELEASE</spring-boot-maven-plugin.version>
 
         <modelmapper.version>0.7.3</modelmapper.version>
