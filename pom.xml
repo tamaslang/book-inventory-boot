@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.3.RELEASE</version>
+        <version>1.2.5.RELEASE</version>
     </parent>
 
     <groupId>org.talang</groupId>
@@ -14,8 +14,8 @@
     <packaging>jar</packaging>
 
     <properties>
-        <rest-devtools.version>1.0.3</rest-devtools.version>
-        <spring-boot-maven-plugin.version>1.2.3.RELEASE</spring-boot-maven-plugin.version>
+        <rest-devtools.version>1.0.4</rest-devtools.version>
+        <spring-boot-maven-plugin.version>1.2.5.RELEASE</spring-boot-maven-plugin.version>
 
         <modelmapper.version>0.7.3</modelmapper.version>
         <spring-boot.version>1.2.1</spring-boot.version>
