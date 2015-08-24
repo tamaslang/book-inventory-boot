@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.talangsoft.rest.devtools.web.util.RestUtils</OriginalElement>
+  <nodes>
+    <node x="147.5" y="171.5">org.talangsoft.bookinventory.service.BookServiceImpl</node>
+    <node x="-616.0" y="-334.5209072503535">org.talangsoft.rest.devtools.web.RestExceptionHandler</node>
+    <node x="-632.0" y="208.5">org.talangsoft.rest.devtools.web.ErrorDTO</node>
+    <node x="-284.51057546889894" y="-34.5">org.talangsoft.rest.devtools.web.RestError</node>
+    <node x="147.0" y="-19.5">org.talangsoft.bookinventory.api.RestErrors</node>
+    <node x="-306.93140516827566" y="-125.5209072503535">org.talangsoft.rest.devtools.web.TranslatableToRestError</node>
+    <node x="-616.0" y="-11.599701549191025">org.talangsoft.rest.devtools.web.RestException</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.talangsoft.bookinventory.api.RestErrors" target="org.talangsoft.rest.devtools.web.TranslatableToRestError">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.talangsoft.bookinventory.api.RestErrors" target="org.talangsoft.rest.devtools.web.RestError">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.talangsoft.rest.devtools.web.RestException" target="org.talangsoft.rest.devtools.web.RestError">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.talangsoft.bookinventory.service.BookServiceImpl" target="org.talangsoft.rest.devtools.web.RestException">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="org.talangsoft.rest.devtools.web.RestException" target="org.talangsoft.rest.devtools.web.TranslatableToRestError">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="296.0" y="149.0" />
+  <SelectedNodes>
+    <node>org.talangsoft.bookinventory.service.BookServiceImpl</node>
+    <node>org.talangsoft.rest.devtools.web.RestExceptionHandler</node>
+    <node>org.talangsoft.rest.devtools.web.ErrorDTO</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Properties</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
