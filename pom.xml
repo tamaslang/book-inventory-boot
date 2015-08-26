@@ -34,6 +34,8 @@
         <HikariCP.version>1.2.8</HikariCP.version>
         <maven-project-info-reports-plugin.version>2.8</maven-project-info-reports-plugin.version>
         <liquibase-core.version>3.1.0</liquibase-core.version>
+
+        <activemq-core.version>5.7.0</activemq-core.version>
     </properties>
 
 
@@ -144,6 +146,22 @@
             <version>${jsonassert.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- JMS -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.jms</groupId>
+            <artifactId>jms-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-core</artifactId>
+            <version>${activemq-core.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

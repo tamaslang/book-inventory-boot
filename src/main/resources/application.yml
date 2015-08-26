@@ -2,7 +2,9 @@ gateway:
   configuration:
     readTimeout: 20000
     connectTimeout: 20000
-
+jms:
+  bookmgrqueue:
+    name: book-mgr-queue
 
 spring:
     datasource:
