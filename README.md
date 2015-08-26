@@ -7,6 +7,9 @@ On the creation of a new Book it is registered via an imaginary 3rd party "regis
 
 ![Book Inventory app architecture](/docs/book_inventory_app.png "Inventory app architecture")
 
+Also a Jms Queue interface is supported to manage the books. 
+![Book Inventory Jms Queue](/docs/book_manager_queue.png "Book manager Queue architecture")
+
 The book inventory app relies on my
 <a href="http://www.talangsoft.org/2015/02/16/rest-devtools-introduction/" target="_blank">Rest Devtools</a> library released now in Sonatype repo / Maven Central .
 
